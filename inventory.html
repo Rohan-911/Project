@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Station - Recovered Vehicle Inventory System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://img.icons8.com/color/48/000000/police-badge.png" alt="Police Logo" class="police-logo">
+                <span>Police Vehicle Recovery</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="inventory.html" class="active">Inventory</a></li>
+                <li><a href="home.html#statistics">Statistics</a></li>
+                <li><a href="home.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <header>
+            <h1>Police Station</h1>
+            <h2>Recovered Vehicle Inventory Management System</h2>
+        </header>
+
+        <main>
+            <section class="add-vehicle-section">
+                <h3>Add Recovered Vehicle</h3>
+                <form id="addVehicleForm">
+                    <div class="form-group">
+                        <label for="vehicleModel">Vehicle Model:</label>
+                        <input type="text" id="vehicleModel" name="vehicleModel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serialNumber">Serial Number:</label>
+                        <input type="text" id="serialNumber" name="serialNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color:</label>
+                        <input type="text" id="color" name="color" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recoveryDate">Recovery Date:</label>
+                        <input type="date" id="recoveryDate" name="recoveryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recoveryLocation">Recovery Location:</label>
+                        <input type="text" id="recoveryLocation" name="recoveryLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="condition">Condition:</label>
+                        <select id="condition" name="condition" required>
+                            <option value="">Select condition</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="In Storage">In Storage</option>
+                            <option value="Claimed">Claimed</option>
+                            <option value="Under Investigation">Under Investigation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL:</label>
+                        <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <button type="submit" class="btn primary">Add Vehicle</button>
+                </form>
+            </section>
+
+            <section class="inventory-section">
+                <h3>Current Inventory</h3>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search vehicles...">
+                </div>
+                <table id="vehicleInventory">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Model</th>
+                            <th>Serial Number</th>
+                            <th>Color</th>
+                            <th>Recovery Date</th>
+                            <th>Location</th>
+                            <th>Condition</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vehicleTableBody">
+                        <!-- Vehicle entries will be dynamically added here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="Vehicle Image">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="home.html#statistics">Statistics</a></li>
+                    <li><a href="home.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Police Department</p>
+                <p>123 Main Street</p>
+                <p>City, State 12345</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Police Department - Vehicle Recovery System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
